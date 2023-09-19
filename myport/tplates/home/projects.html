@@ -1,0 +1,577 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- {% block title %} blogHome {% endblock title %}
+
+{% block blogactive %} active {% endblock blogactive %} -->
+
+
+{% block bodypage %}
+<style>
+    .pbuttons {
+        margin-top: 2%;
+        margin-left: 28%;
+    }
+
+    .myprojects {
+        width: 100%;
+    }
+
+    .myprojects h1 {
+        font-size: 4rem;
+        color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+    }
+
+    .myprojects h2 {
+        font-size: 1.6rem;
+        color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+    }
+
+    .myprojects h3 {
+        font-size: 1.6rem;
+        color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+    }
+
+    .project1 {
+        display: flex;
+        margin-left: 15%;
+    }
+
+    .proj1 {
+        height: 550px;
+        width: 520px;
+        background-color: #e9e9e9;
+        border-radius: 30px;
+    }
+
+    .proj1 img {
+        margin-top: 2%;
+        margin-left: 2%;
+        border-radius: 20px;
+    }
+
+    .proj1 h1 {
+        font-size: 2.6rem;
+        color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+    }
+
+    .proj1 h2 {
+        font-size: 1.3rem;
+        color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+    }
+
+    .proj1 button {
+        margin-left: 37%;
+    }
+
+    .proj2 {
+        margin-left: 2%;
+        height: 550px;
+        width: 520px;
+        background-color: #e9e9e9;
+        border-radius: 30px;
+    }
+
+    .proj2 img {
+        margin-top: 2%;
+        margin-left: 2%;
+        border-radius: 20px;
+    }
+
+    .proj2 h1 {
+        font-size: 2.6rem;
+        color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+    }
+
+    .proj2 h2 {
+        font-size: 1.3rem;
+        color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+    }
+
+    .proj2 button {
+        margin-left: 37%;
+    }
+
+    .proj3 {
+        margin-left: 2%;
+        height: 550px;
+        width: 520px;
+        background-color: #e9e9e9;
+        border-radius: 30px;
+    }
+
+    .proj3 img {
+        margin-top: 2%;
+        margin-left: 2%;
+        border-radius: 20px;
+    }
+
+    .proj3 h1 {
+        font-size: 2.6rem;
+        color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+    }
+
+    .proj3 h2 {
+        font-size: 1.3rem;
+        color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+    }
+
+    .proj3 button {
+        margin-left: 37%;
+    }
+
+    /* new Added projects */
+    .mynewprojects h1 {
+        font-size: 4rem;
+        color: rgb(231, 142, 58);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+    }
+
+    .mynewprojects h2 {
+        font-size: 1.6rem;
+        color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+    }
+
+    .mynewprojects h3 {
+        font-size: 1.6rem;
+        color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+    }
+
+    .updateproject {
+        height: 350px;
+        width: 70%;
+        background-color: #f7ece1;
+        border-radius: 30px;
+        margin-left: 15%;
+    }
+
+    .updateproject h1 {
+        font-size: 3rem;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style: italic;
+        color: black;
+        margin-top: 1%;
+        margin-left: -60%;
+    }
+
+    .pic {
+        display: flex;
+    }
+
+    .pic h3 {
+        margin-left: 1%;
+        margin-right: 1%;
+        text-align: start;
+        font-size: 1.5rem;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .pic img {
+        margin-right: 1%;
+        margin-top: -1%;
+        border-radius: 30px;
+    }
+
+    .newproject {
+        margin-top: -2.5%;
+        margin-left: 2%;
+    }
+
+    .projectimg {
+        position: relative;
+        width: 507px;
+        /* Adjust the size as needed */
+        height: 330px;
+        /* Adjust the size as needed */
+        overflow: hidden;
+        border-radius: 30px;
+    }
+
+    .projectimg img {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.3s ease-in-out;
+        background-size: cover;
+    }
+
+    .projectimg:hover img {
+        transform: scale(1.1);
+        /* Adjust the scale factor for the desired zoom effect */
+    }
+
+    /* making the page responsive */
+    @media (max-width : 1600px) {
+        .navbarsec {
+            display: none;
+        }
+
+        .project1 {
+            display: flex;
+            margin-left: 7%;
+        }
+
+        .projectimg {
+            position: relative;
+            width: 405px;
+            height: 310px;
+            overflow: hidden;
+            border-radius: 30px;
+        }
+
+        .proj1 {
+            height: 529px;
+            width: 413px;
+            background-color: #e9e9e9;
+            border-radius: 30px;
+        }
+
+        .proj2 {
+            height: 529px;
+            width: 413px;
+            background-color: #e9e9e9;
+            border-radius: 30px;
+        }
+
+        .proj3 {
+            height: 529px;
+            width: 413px;
+            background-color: #e9e9e9;
+            border-radius: 30px;
+        }
+    }
+
+    /* making the page responsive */
+    @media (max-width : 1200px) {
+        .project1 {
+            margin-left: 5%;
+        }
+
+        .projectimg {
+            width: 320px;
+            height: 240px;
+        }
+
+        .proj1 {
+            height: 451px;
+            width: 337px;
+        }
+
+        .proj2 {
+            height: 451px;
+            width: 337px;
+        }
+
+        .proj3 {
+            height: 451px;
+            width: 337px;
+        }
+
+        #gitbutton {
+            margin-left: 30%;
+        }
+
+        .updateproject h1 {
+            font-size: 2rem;
+            margin-left: -37%;
+        }
+    }
+
+    @media (max-width : 880px) {
+        .project1 {
+            margin-left: 5%;
+            display: block;
+        }
+
+        .project1 {
+            margin-left: 31%;
+            display: block;
+        }
+
+        .proj2 {
+            margin-top: 8px;
+        }
+
+        .proj3 {
+            margin-top: 8px;
+        }
+    }
+
+    @media (max-width : 732px) {
+        .fullpage{
+            width: 114%;
+        }
+    }
+    @media (max-width : 465px) {
+        .fullpage{
+            width: 121.1%;
+        }
+        .project1 {
+    margin-left: 22%;
+    display: block;
+}
+
+.project2 {
+    margin-left: 22%;
+    display: block;
+}
+
+.project3 {
+    margin-left: 22%;
+    display: block;
+}
+.pbuttons {
+    margin-top: 2%;
+    margin-left: 7%;
+}
+
+    }
+    @media (max-width : 400px) {
+        .fullpage{
+            width: 143%;
+        }
+
+    }
+    @media (max-width : 300px) {
+        .fullpage{
+            width: 188%;
+        }
+
+    }
+</style>
+<div class="fullpage">
+
+<div class="mycraousal">
+    <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'images/projects/blog12.jpg' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/projects/blog12.jpg' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/projects/blog12.jpg' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+<div class="pbuttons">
+    <button type="button" class="btn btn-primary btn-lg">All</button>
+    <button type="button" class="btn btn-secondary btn-lg">Software Development</button>
+    <button type="button" class="btn btn-success btn-lg">WebDevelopment</button>
+    <button type="button" class="btn btn-warning btn-lg">Internet of things</button>
+    <button type="button" class="btn btn-info btn-lg">Electronics</button>
+    <button type="button" class="btn btn-danger btn-lg">Python projects</button>
+</div>
+<div class="myprojects">
+    .
+    <h1>Web Development Projects </h1>
+    <h2>Visit my projects . Feel free to see my github for the source code of all the projects . various kinds of
+        projects are there including WebDevelopment , Iot , Electronics etc </h2>
+    <h3>Visit the contact if you need any help i would be to help someone . Thanks for Visiting</h3>
+    <div class="project1">
+        .
+        <div class="proj1">
+            <div class="projectimg">
+                <img src="{% static 'images/projects/projectpic/web/e1.jpg' %}" alt="">
+            </div>
+            <h1>Shopify</h1>
+            <h2>A E-commerece shoppping website with beautigul user intrface and costomized admin panel . </h2>
+            <button type="button" id="gitbutton" class="btn btn-primary btn-lg">Github Code</button>
+        </div>
+        <div class="proj2">
+            <div class="projectimg">
+                <img src="{% static 'images/projects/projectpic/web/e2.jpg' %}" alt="">
+            </div>
+            <h1>MyPort</h1>
+            <h2>A personal portfolio website to showcase my projects and skills on different technologies . </h2>
+            <button type="button" id="gitbutton" class="btn btn-primary btn-lg">Github Code</button>
+        </div>
+        <div class="proj3">
+            <div class="projectimg">
+                <img src="{% static 'images/projects/projectpic/web/e3.jpg' %}" alt="">
+            </div>
+            <h1>Bloging platform</h1>
+            <h2>A beautiful UI personal blogging website with django and other modern web technologies .   </h2>
+            <button type="button" id="gitbutton" class="btn btn-primary btn-lg">Github Code</button>
+        </div>
+    </div>
+</div>
+<div class="myprojects">
+    .
+    <h1>Pygame Projects</h1>
+    <h2>Visit all my projects whcich are made using IOT . Smart and Advanced projects using Different types of
+        microcontrolers , sensors etc </h2>
+    <h3>Source code is available for this type of projects if it's posiblle</h3>
+    <div class="project1">
+        <div class="proj1">
+            <div class="projectimg">
+                <img src="{% static 'images/projects/projectpic/gamedev/p1.jpg' %}" alt="">
+            </div>
+            <h1>8 ball pool </h1>
+            <h2>Building 8 ball pool with beautiful desktop Ui with the the help of python and pygame  </h2>
+            <button type="button" id="gitbutton" class="btn btn-primary btn-lg">Github Code</button>
+        </div>
+        <div class="proj2">
+            <div class="projectimg">
+                <img src="{% static 'images/projects/projectpic/gamedev/p2.png' %}" alt="">
+            </div>
+            <h1>Space Inverters</h1>
+            <h2>A Space shotting desktop based game with the help of python and pygame . </h2>
+            <button type="button" id="gitbutton" class="btn btn-primary btn-lg">Github Code</button>
+        </div>
+        <div class="proj3">
+            <div class="projectimg">
+                <img src="{% static 'images/projects/projectpic/gamedev/p3.png' %}" alt="">
+            </div>
+            <h1>Snake Game</h1>
+            <h2>Building the oldage desktop based snake game using python and tkinter module . </h2>
+            <button type="button" id="gitbutton" class="btn btn-primary btn-lg">Github Code</button>
+        </div>
+    </div>
+</div>
+<div class="myprojects">
+    .
+    <h1>Internet Of Things </h1>
+    <h2>Visit all my projects whcich are made using IOT . Smart and Advanced projects using Different types of
+        microcontrolers , sensors etc </h2>
+    <h3>Source code is not available for this type of projects</h3>
+    <div class="project1">
+        <div class="proj1">
+            <div class="projectimg">
+                <img src="{% static 'images/projects/projectpic/iot/iot1.png' %}" alt="">
+            </div>
+            <h1>Voice modulation System like Alexa </h1>
+            <h2>Building a desktop based app to control the electrical appliances with the help of Aurdino , ESP8266 and python</h2>
+            <button type="button" id="gitbutton" class="btn btn-primary btn-lg">Github Code</button>
+        </div>
+        <div class="proj2">
+            <div class="projectimg">
+                <img src="{% static 'images/projects/projectpic/iot/iot2.jpg' %}" alt="">
+            </div>
+            <h1>Automated Speed Control of DC motor</h1>
+            <h2>Building a Hardware to control the speed of DC motor with the help of microcontrolers and python . </h2>
+            <button type="button" id="gitbutton" class="btn btn-primary btn-lg">Github Code</button>
+        </div>
+        <div class="proj3">
+            <div class="projectimg">
+                <img src="{% static 'images/projects/projectpic/iot/iot3.png' %}" alt="">
+            </div>
+            <h1>Automated Trannsformer Monitoring System </h1>
+            <h2>A E-commerece shoppping website with beautigul user intrface and costomized admin panel </h2>
+            <button type="button" id="gitbutton" class="btn btn-primary btn-lg">Github Code</button>
+        </div>
+    </div>
+</div>
+<div class="myprojects">
+    .
+    <h1>Python Projects </h1>
+    <h2>Creatting exciting python projects with the help of Different libraries and frameworks of python </h2>
+    <h3>Source code is not available for this type of projects</h3>
+    <div class="project1">
+        <div class="proj1">
+            <div class="projectimg">
+                <img src="{% static 'images/projects/projectpic/pythongui/py1.jpg' %}" alt="">
+            </div>
+            <h1>Email Sender</h1>
+            <h2>Building a Automatic Email Sender on danger with the help of Python  </h2>
+            <button type="button" id="gitbutton" class="btn btn-primary btn-lg">Github Code</button>
+        </div>
+        <div class="proj2">
+            <div class="projectimg">
+                <img src="{% static 'images/projects/projectpic/pythongui/py2.jpg' %}" alt="">
+            </div>
+            <h1>Video Player </h1>
+            <h2>building a GUI based Desktop Video player with the help of python and tkinter . </h2>
+            <button type="button" id="gitbutton" class="btn btn-primary btn-lg">Github Code</button>
+        </div>
+        <div class="proj3">
+            <div class="projectimg">
+                <img src="{% static 'images/projects/projectpic/pythongui/py3.jpg' %}" alt="">
+            </div>
+            <h1>Rock , Paper , Sissior Game</h1>
+            <h2>building a text based rock , paper , Sissior game with the help of python </h2>
+            <button type="button" id="gitbutton" class="btn btn-primary btn-lg">Github Code</button>
+        </div>
+    </div>
+</div>
+
+<!-- New added projects  -->
+<div class="mynewprojects">
+    .
+    <h1>New Recently Added projects </h1>
+    <h2>Creatting exciting new projects with different languages and new technologies including Development to Internet
+        of things </h2>
+    <h3>Feel free to watch all my new projects . source code are provided for the projects if its posiblle </h3>
+    {% for post in allPosts %}
+    <div class="updateproject">
+        <h1> Project Name - {{post.name}}</h1>
+        <div class="pic">
+            <h3>{{post.mydesc}}</h3>
+            <img src="{{post.proimage.url}}" alt="">
+        </div>
+        <div class="newproject">
+            <button type="button" class="btn btn-primary btn-lg">Github Code </button>
+            <button type="button" class="btn btn-success btn-lg">Read Blogs</button>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+</div>
+{% endblock bodypage %}
+

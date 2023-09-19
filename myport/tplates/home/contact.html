@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block bodypage %}
+<style>
+
+.background{
+   margin-top: -105px;
+    background-color: rgb(238, 242, 243);
+    max-height: 300px;
+    height: 280px;
+}
+
+.container{
+  margin-top: 4.5%;
+   text-align: center;
+}
+.write{
+    padding-top: 35px;
+    align-items: center;
+    font-size: 75px;
+}
+.containers{
+    padding-top: 25px;
+    text-align: center;
+    color: rgb(25, 68, 255);
+    font-size: 65px;
+}
+.containerss{
+    padding-top: 2px;
+    text-align: center;
+    font-size: 45px;
+}
+.box{
+    padding-left: 16%;
+}
+.form1{
+    width: 40vw;
+    font-size: 1.2rem;
+}
+.box{
+    display: flex;
+    font-weight: 500;
+    margin-left: 16%;
+}
+.backgroundimg{
+  background-image: url("{% static 'images/contact/c3.jpg' %}");
+  background-size: cover;
+} 
+#params{
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.877);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+}
+</style>
+<style>
+  
+  /* Making the page responssive */
+  @media (max-width : 1500px) {
+    .write {
+    padding-top: 94px;
+}
+        }
+        @media (max-width : 730px) {
+    .fullpage{
+      width: 115%;
+    }
+        }
+        @media (max-width : 625px) {
+    .fullpage{
+      width: 117%;
+    }
+        }
+        @media (max-width : 625px) {
+    .fullpage{
+      width: 123%;
+    }
+        }
+</style>
+<div class="fullpage">
+
+<div class="background">
+  .
+<div class="container">
+    <h1 class="write">Hi! We’re here. </h1>
+</div>
+
+</div>
+<div class="backgroundimg">
+<div class="contact1">
+    <div class="containers">
+    <h1>How can we help you ?</h1>
+    </div>
+    <div class="containerss">
+    <h4>Our team is here to help. Whether your inquiry is about our courses, services, or support, simply fill out the contact form below . </h4>
+    </div>
+</div>
+<div class="contactmy-form">
+<div class="box">
+    <div class="form1">
+    <form method="post" action="/contact" >
+        {% csrf_token %}
+        <div class="mb-2">
+            <label for="name" id="params" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" aria-describedby="name">
+        </div>
+        <div class="mb-2">
+          <label for="email" id="params" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-2">
+            <label for="phone" id="params" class="form-label">Phone Number</label>
+            <input type="number" class="form-control" id="Phone" name="phone" aria-describedby="phone">
+        </div>
+        
+        <div class="col-lg-6 mb-2">
+            <label for="contactWebsiteName" id="params" class="form-label label-color-2 fs-15">Purpose</label>
+            <select name="contactWebsiteName" id="contactWebsiteName" class="form-select" required="" data-bv-field="contactWebsiteName">
+                <option value="">Select Purpose</option>
+                <option value="Course"> Contact</option>
+                <option value="Services"> Services</option>
+                <option value="Support"> Support</option>
+                <option value="Job Application"> Virtual Meet-Up</option>
+                <option value="Media">Learning purpose</option>
+                <option value="Others"> Others</option>
+            </select>
+        <small class="help-block" data-bv-validator="notEmpty" data-bv-for="contactWebsiteName" data-bv-result="NOT_VALIDATED" style="display: none;">Please select purpose</small>
+      </div> 
+        <div class="mb-2 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+    </div>
+    
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+{% endblock bodypage %}
+

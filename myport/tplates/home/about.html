@@ -1,0 +1,1014 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        header {
+            padding-top: 6px;
+            width: 100%;
+            height: 118px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+            margin-left: 500px;
+            margin-right: 100px;
+        }
+
+        .nav ol {
+            display: flex;
+            list-style: none;
+        }
+
+        .btns {
+            position: relative;
+            width: 25px;
+            height: 25px;
+            -webkit-appearance: none;
+            appearance: none;
+            cursor: pointer;
+            display: none;
+        }
+
+        .btns::before {
+            content: '\f0c9';
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .nav ol li {
+            margin: lem;
+        }
+
+        .nav ol li a {
+            text-decoration: none;
+            padding: 0.2em 1.2em 0.9em 1.2em;
+            border-radius: 10px 10px 0 0;
+            color: rgb(0, 0, 0);
+            transition: all .4s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav ol li a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 51px;
+            border-radius: 10px 10px 0 0;
+            background: #000000;
+            transform-origin: bottom;
+            /* background: linear-gradient(to right, #8cafdd, #6b8bcf, #7a9ad4); */
+            background-color: rgb(233, 124, 51);
+            transform: scaleY(0.05);
+            z-index: -1;
+            transition: all .4s;
+        }
+
+        .nav ol li a:hover::before {
+            transform: scaleY(1.1);
+        }
+
+        .nav ol li a:hover {
+            color: rgb(0, 0, 0);
+        }
+
+
+
+        .navbarsec {
+            position: fixed;
+        }
+
+        .Logo {
+            margin-left: 250px;
+        }
+
+
+
+
+        .navbarsec {
+            position: fixed;
+        }
+
+        /* Starting of start section n*/
+        .name1 h1 {
+            margin-top: 190px;
+            margin-left: 150px;
+            font-size: 1.5rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+
+        .footer {
+            margin-top: 3%;
+            height: 470px;
+            width: 100%;
+            background: linear-gradient(to right, #04146d, #2d0b00);
+            border-radius: 230px 0 0 0;
+            display: flex;
+        }
+
+        .footer1 {
+            width: 30%;
+            margin-left: 130px;
+        }
+
+        .footer1 h1 {
+            margin-left: -10%;
+            font-size: 3rem;
+            margin-top: 10%;
+        }
+
+        .footer1 p {
+            margin-left: 36%;
+            font-size: 1.1rem;
+            color: white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: italic;
+        }
+
+        .footer2 {
+            width: 550px;
+        }
+
+        .footer2 h1 {
+            margin-left: 15%;
+            color: white;
+            font-size: 3rem;
+            margin-top: 12%;
+        }
+
+        #footername {
+            margin-top: -20px;
+            margin-left: 15%;
+            font-size: 4rem;
+            color: white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: italic;
+            background: linear-gradient(45deg, #ff1f79, #89f044, #3576d8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        #footeremail {
+            font-size: 1.2rem;
+            color: white;
+            margin-left: 16%;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: italic;
+        }
+
+        #footeremail1 {
+            font-size: 1.2rem;
+            color: white;
+            margin-left: 16%;
+            margin-top: -15px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: italic;
+        }
+
+        .footer3 h1 {
+            color: white;
+            margin-left: -70%;
+            margin-top: 42%;
+            font-size: 3rem;
+        }
+
+        .footer3 p {
+            font-size: 1.2rem;
+            color: white;
+            margin-top: 2px;
+            margin-left: -60%;
+            margin-top: -15px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: italic;
+        }
+
+        #webmargin {
+            margin-top: 10px;
+        }
+
+        .footer4 img {
+            margin-top: -5%;
+        }
+
+        #footerline {
+            color: white;
+            width: 80%;
+            height: 2px;
+            position: absolute;
+            margin-top: 15%;
+            margin-left: 180px;
+        }
+
+        .footer5 h1 {
+            color: white;
+            font-size: 1.2rem;
+            position: absolute;
+            display: block;
+            margin-top: 392px;
+            margin-left: -1000px;
+        }
+
+        .footerimages {
+            margin-top: 380px;
+            margin-left: -760px;
+        }
+
+
+        /* New ------------------------------------------- */
+        #slideContent {
+            max-height: 0;
+            overflow: hidden;
+            transform: translateY(0) rotate(0deg);
+            transition: max-height 0.3s ease-in-out;
+
+        }
+
+        /* starting of nav designing  */
+        .navcontent {
+            display: flex;
+            /* background-color: rgb(30, 30, 141); */
+            background-image: url("{% static 'images/homeimages/nav/navbg3.jpg' %}");
+            height: 800px;
+            width: 2800px;
+            background-size: cover;
+
+        }
+
+        .navcontent h3 {
+            margin-left: 20px;
+            margin-top: 40px;
+            color: white;
+        }
+
+        .navcontent p {
+            font-size: 4rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        #styele {
+            margin-left: 100px;
+            margin-top: 40px;
+        }
+
+        #styeleee {
+            margin-top: 40px;
+            margin-left: 29px;
+        }
+
+        .navcontent1 {
+            margin-left: 11.7%;
+            margin-top: 7%;
+            width: 400px;
+            height: 240px;
+            background-color: url("bg1.jpg");
+            border: 2px solid #eceaea;
+            border-radius: 10px;
+        }
+
+        .navcontent1 h3 {
+            font-size: 1rem;
+        }
+
+        .navcontent2 h3 {
+            font-size: 1rem;
+        }
+
+        .navcontent3 h3 {
+            font-size: 1rem;
+        }
+
+        .navcontent4 h3 {
+            font-size: 1rem;
+        }
+
+        .navcontent2 {
+            margin-left: 3%;
+            margin-top: 7%;
+            width: 400px;
+            height: 240px;
+            background-color: url("bg2.jpg");
+            border: 2px solid #eceaea;
+            border-radius: 10px;
+        }
+
+        .navcontent3 {
+            margin-left: 3%;
+            margin-top: 7%;
+            width: 400px;
+            height: 240px;
+            background-color: url("bg4.jpg");
+            border: 2px solid #eceaea;
+            border-radius: 10px;
+        }
+
+        .navcontent4 {
+            margin-left: 3%;
+            margin-top: 7%;
+            width: 400px;
+            height: 240px;
+            background-color: url("bg5.jpg");
+            border: 2px solid #eceaea;
+            border-radius: 10px;
+        }
+
+        /* Add a transition for smooth animation  */
+        .animated-element1 {
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .animated-element1:hover {
+            transform: scale(1.1);
+            background-color: #e74c3c;
+            /* Scale the element on hover */
+        }
+
+        .animated-element2 {
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .animated-element2:hover {
+            transform: scale(1.1);
+            background-color: #5ab3e6;
+            /* Scale the element on hover */
+        }
+
+        .animated-element3 {
+            width: 325px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .animated-element3:hover {
+            transform: scale(1.1);
+            background-color: #4454e7;
+            /* Scale the element on hover */
+        }
+
+        .animated-element4 {
+            width: 333px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .animated-element4:hover {
+            transform: scale(1.1);
+            background-color: #46a872;
+            /* Scale the element on hover */
+        }
+
+        .orange {
+            height: 10px;
+            width: 250px;
+            background-color: #e74c3c;
+            border-radius: 10px;
+            margin-left: 18%;
+            margin-top: -1%;
+        }
+
+        .indigo {
+            height: 10px;
+            width: 250px;
+            background-color: #5ab3e6;
+            border-radius: 10px;
+            margin-left: 18%;
+            margin-top: -1%;
+        }
+
+        .green {
+            height: 10px;
+            width: 350px;
+            background-color: #46a872;
+            border-radius: 10px;
+            margin-left: 5%;
+            margin-top: -1%;
+        }
+
+        .purple {
+            height: 10px;
+            width: 350px;
+            background-color: #4454e7;
+            border-radius: 10px;
+            margin-left: 5%;
+            margin-top: -1%;
+        }
+
+        .navs {
+            margin-left: 85%;
+            position: absolute;
+            margin-top: 2%;
+        }
+
+        .options {
+            position: absolute;
+            margin-top: 20%;
+            margin-left: 34%;
+            font-size: large;
+            font-weight: 500;
+            color: white;
+        }
+
+        .options p {
+            margin-left: -550px;
+            margin-right: 208px;
+            font-size: 1.5rem;
+            font-weight: 200;
+        }
+
+        .options h4 {
+            margin-left: -200px;
+            margin-right: 208px;
+            font-size: 1.5rem;
+            font-weight: 200;
+
+        }
+
+        .options h1 {
+            margin-left: -100px;
+            margin-top: -80px;
+            margin-right: 600px;
+            font-size: 2rem;
+            font-weight: 600;
+
+        }
+
+        .footer1 h2 {
+            margin-top: 7%;
+            margin-left: 35%;
+            color: white;
+            font-size: 3rem;
+        }
+
+
+        .buttonl {
+            position: absolute;
+            margin-top: 23%;
+            margin-left: 40.5%;
+        }
+
+        /* test */
+        .navbutton {
+            position: absolute;
+            z-index: 1;
+            color: red;
+            padding-top: 0;
+            margin-top: -750px;
+            margin-left: -232px;
+
+        }
+
+        .navs {
+            margin-left: 400px;
+        }
+
+        #toggleButton {
+            margin-left: 68%;
+            position: relative;
+            margin-top: 98px;
+        }
+
+        .shortnav {
+            position: fixed;
+            margin-left: 170px;
+            margin-top: 50px;
+        }
+
+
+
+        /* Style the cool button */
+        .cool-button {
+            position: fixed;
+            height: 74;
+            width: 100;
+            background-color: none;
+            background: none;
+            border: none;
+
+        }
+
+        .trynav {
+            position: fixed;
+            margin-top: -150px;
+        }
+
+        .searchbar {
+            margin-left: 0%;
+        }
+
+        /* ------------------------------------------------------ Writing code to make the code make responsive ---------------------------------------------------- */
+        @media (max-width : 1560px) {
+            .Logo {
+                margin-left: 53px;
+            }
+
+            #toggleButton {
+                margin-left: 46%;
+            }
+        }
+
+        @media (max-width : 1370px) {
+            .nav {
+                margin-left: 200px;
+                margin-right: 5px;
+            }
+        }
+
+        @media (max-width : 1370px) {
+            #toggleButton {
+                margin-left: 37%;
+            }
+        }
+
+
+        @media (max-width : 975px) {
+            .nav {
+                margin-left: 10px;
+            }
+
+            #toggleButton {
+                margin-left: 30%;
+            }
+        }
+
+        @media (max-width : 800px) {
+            .Logo {
+                margin-left: -9px;
+            }
+
+            .nav {
+                font-size: 1rem;
+                margin-left: -29px;
+                margin-right: -41px;
+            }
+
+            #toggleButton {
+                margin-left: 20%;
+            }
+        }
+
+        @media (max-width : 450px) {
+            .nav {
+                display: none;
+            }
+
+            #toggleButton {
+                margin-left: 11%;
+                margin-top: 138px;
+            }
+        }
+
+        @media (max-width : 365px) {
+            #toggleButton {
+                margin-left: 9%;
+                margin-top: 138px;
+            }
+        }
+
+
+        @media (max-width : 305px) {
+            #toggleButton {
+                margin-left: 6.5%;
+                margin-top: 138px;
+            }
+        }
+
+        /* Making the short nav responsive */
+        @media (max-width : 1500px) {
+            .options h1 {
+                margin-left: -540px;
+            }
+
+            .options p {
+                margin-left: -900px;
+                margin-right: -11px;
+                font-size: 1.1rem;
+            }
+
+            .options h4 {
+                margin-left: -550px;
+                margin-right: 208px;
+                font-size: 1.1rem;
+                font-weight: 200;
+            }
+
+            .navcontent p {
+                font-size: 3rem;
+            }
+
+            .navcontent1 {
+                margin-left: 3.7%;
+                margin-top: 5%;
+                width: 300px;
+                height: 210px;
+            }
+
+            #styele {
+                margin-left: 48px;
+                margin-top: 10px;
+            }
+
+            .orange {
+                margin-left: 7%;
+            }
+
+            .navcontent2 {
+                margin-left: 0.7%;
+                margin-top: 5%;
+                width: 300px;
+                height: 210px;
+            }
+
+            .navcontent3 {
+                margin-left: 0.7%;
+                margin-top: 5%;
+                width: 300px;
+                height: 210px;
+            }
+
+            .navcontent4 {
+                margin-left: 0.7%;
+                margin-top: 5%;
+                width: 300px;
+                height: 210px;
+            }
+
+            #styeleee {
+                margin-top: 9px;
+                margin-left: -20px;
+            }
+
+            .purple {
+                height: 10px;
+                width: 270px;
+            }
+
+            .green {
+                height: 10px;
+                width: 270px;
+            }
+
+            .indigo {
+                margin-left: 7%;
+            }
+
+            #descp {
+                font-size: 1.1rem;
+            }
+
+            .buttonl {
+                position: absolute;
+                margin-top: 23%;
+                margin-left: 24%;
+            }
+        }
+        @media (max-width : 370px) {
+            .navcontent1 {
+    margin-left: 1.1px;
+}
+
+.navcontent1 {
+    margin-left: 1.1px;
+    margin-top: 1%;
+    width: 90px;
+    height: 80px;
+}
+.navcontent h3 {
+    margin-left: 5px;
+    margin-top: 6px;
+}
+#styele {
+    font-size: 1.3rem;
+    margin-left: -58px;
+    margin-top: -21px;
+}
+.orange {
+    height: 8px;
+    width: 74px;
+    margin-left: 6%;
+    margin-top: -27%;
+}
+.navcontent2 {
+    margin-left: 0.1px;
+    margin-top: 1%;
+    width: 90px;
+    height: 80px;
+}
+.indigo {
+    height: 8px;
+    width: 74px;
+    margin-left: 8%;
+    margin-top: -27%;
+}
+.navcontent3 {
+    margin-left: 0.1px;
+    margin-top: 1%;
+    width: 90px;
+    height: 80px;
+}     
+#styeleee {
+    margin-top: -18px;
+    margin-left: -119px;
+    font-size: 1rem;
+}
+.purple {
+    height: 8px;
+    width: 74px;
+    margin-left: 6%;
+    margin-top: -27%;
+}
+
+
+.navcontent4 {
+    margin-left: 0.1px;
+    margin-top: 1%;
+    width: 90px;
+    height: 80px;
+}
+
+.green {
+    height: 8px;
+    width: 74px;
+    margin-left: 6%;
+    margin-top: -27%;
+}
+.options {
+    display: none;
+}
+.navcontent {
+    height: 120px;
+}
+        }
+
+        @media (max-width : 350px) {
+            .navcontent1 {
+    width: 85px;
+}
+.navcontent2 {
+    width: 85px;
+}
+.navcontent3 {
+    width: 85px;
+}
+.navcontent4 {
+    width: 85px;
+}
+#styeleee {
+    margin-top: -18px;
+    margin-left: -125px;
+    font-size: 1rem;
+}
+        }
+
+        @media (max-width : 305px) {
+            .navcontent1 {
+    width: 75px;
+}
+.navcontent2 {
+    width: 75px;
+}
+.navcontent3 {
+    width: 75px;
+}
+.navcontent4 {
+    width: 75px;
+}
+#styele {
+    margin-left: -65px;
+}
+
+.orange {
+    width: 69px;
+    margin-left: 1%;
+}
+.indigo {
+    width: 69px;
+    margin-left: 1%;
+}
+
+.purple {
+    width: 69px;
+    margin-left: 1%;
+}
+
+.green {
+    width: 69px;
+    margin-left: 1%;
+}
+        }
+
+
+
+        @media (max-width : 270px) {
+            .navcontent1 {
+    width: 65px;
+    height: 70px;
+}
+.navcontent2 {
+    width: 65px;
+    height: 70px;
+}
+.navcontent3 {
+    width: 65px;
+    height: 70px;
+}
+.navcontent4 {
+    width: 65px;
+    height: 70px;
+}
+#styele {
+    margin-left: -71px;
+    font-size: 1rem;
+}
+#styeleee {
+    margin-top: -18px;
+    margin-left: -131px;
+    font-size: 0.85rem;
+}
+.orange {
+    width: 57px;
+    margin-left: 3%;
+    margin-top: -27px;
+}
+.indigo {
+    width: 57px;
+    margin-left: 3%;
+    margin-top: -27px;
+}
+
+.purple {
+    width: 57px;
+    margin-left: 3%;
+    margin-top: -27px;
+}
+
+.green {
+    width: 57px;
+    margin-left: 3%;
+    margin-top: -27px;
+}
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbarsec">
+        <header>
+            <p class="Logo"><img src="{% static 'images/homeimages/logo1.png' %}" alt=""></p>
+            <input type="checkbox" name="" class="btns" />
+            <div class="nav">
+                <ol>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="{% url 'blogHome' %}">Blog</a></li>
+                    <li><a href="{% url 'contact' %}">Contact Us </a></li>
+                    <li><a href="{% url 'projects' %}">Projects</a></li>
+                </ol>
+            </div>
+            <div class="loginbuttons">
+
+                <!-- <div class="searchbar">
+        <form class="d-flex"  action="/search" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div> -->
+        </header>
+    </div>
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags}} mb-0 alert-dismissible fade show" role="alert">
+        <strong>Message !</strong> {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    <div class="start1">
+        .
+        <div class="name1">
+            <div class="trynav">
+                <button class="cool-button" type="button" id="toggleButton" class="btn btn-primary"><img
+                        src="{% static 'images/homeimages/nav/navbutton2.png' %}" alt=""></button>
+                <div id="slideContent" class="hidden">
+                    <div class="navcontent">
+                        <div class="navs">
+
+                        </div>
+                        <div class="options">
+                            <h1>Fell Free to Choose any of the options given above</h1>
+                            <p id="descp">Visit my blog section to read my latest blog , look at my new projects the
+                                source code has been
+                                provided . Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo sequi
+                            </p>
+                            <h4>debitis facilis
+                                laborum ipsam commodi aspernatur neque adipisci aliquam quia mollitia autem po</h4>
+                        </div>
+                        <div class="buttonl">
+                            <button type="button" id="mail" class="btn btn-primary btn-lg">Send Me Email </button>
+                        </div>
+
+                        <div class="navcontent1">
+                            <h3>01</h3>
+                            <p id="styele" class="animated-element1"><a style="color: white;" href="/">HOME</a></p>
+                            <div class="orange"></div>
+                        </div>
+                        <div class="navcontent2">
+                            <h3>02</h3>
+                            <p id="styele" class="animated-element2"><a style="color: white;"
+                                    href="{% url 'blogHome' %}">BLOG</a></p>
+                            <div class="indigo"></div>
+                        </div>
+                        <div class="navcontent3">
+                            <h3>03</h3>
+                            <p id="styeleee" class="animated-element3"><a style="color: white;"
+                                    href="{% url 'contact' %}">CONTACT</a></p>
+                            <div class="purple"></div>
+                        </div>
+                        <div class="navcontent4">
+                            <h3>04</h3>
+                            <p id="styeleee" class="animated-element4"><a style="color: white;"
+                                    href="{% url 'projects' %}">PROJECTS</a></p>
+                            <div class="green"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    {% block bodypage %}
+    {% endblock bodypage %}
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+
+        const toggleButton = document.getElementById("toggleButton");
+        const slideContent = document.getElementById("slideContent");
+
+        toggleButton.addEventListener("click", () => {
+            if (slideContent.classList.contains("hidden")) {
+                slideContent.style.maxHeight = slideContent.scrollHeight + "px";
+                slideContent.classList.remove("hidden");
+            } else {
+                slideContent.style.maxHeight = null;
+                slideContent.classList.add("hidden");
+            }
+        });
+
+    </script>
+</body>
+
+</html>

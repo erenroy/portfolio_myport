@@ -1,0 +1,7 @@
+
+python manage.py runserver
+
+superuser name = eren1
+superuser password = eren1
+
+watched till = Day-
